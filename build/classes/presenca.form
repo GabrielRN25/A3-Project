@@ -44,6 +44,8 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="textField2" min="-2" pref="99" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
+                              <Component id="homeButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="jButton2" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
@@ -64,7 +66,10 @@
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jButton2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="homeButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <Component id="textField2" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
@@ -214,6 +219,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="PRESEN&#xc7;A"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JToggleButton" name="jToggleButton4">
           <Properties>
@@ -320,6 +328,14 @@
         </Property>
         <Property name="text" type="java.lang.String" value="LISTA DE PRESEN&#xc7;A"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="homeButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Home Page"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

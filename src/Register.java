@@ -15,6 +15,7 @@ public class Register extends javax.swing.JFrame {
      */
     public Register() {
         initComponents();
+         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
     }
 
     /**
@@ -195,7 +196,9 @@ public class Register extends javax.swing.JFrame {
     }//GEN-LAST:event_nameReg1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+      Login l = new Login();
+      this.dispose();
+      l.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
