@@ -8,4 +8,7 @@ v0.02
 -Criação da classe Usuario
 
 v0.03
-- Configurando e tonando funcional as checkBoxs
+-Configurando e tonando funcional as checkBoxs
+
+v0.04
+ - Correção tela de frequência e configurando jComboBox
