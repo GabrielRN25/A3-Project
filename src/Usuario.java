@@ -3,7 +3,7 @@ public class Usuario {
     private int id;
     private String nome;
     private String senha;
- //contrutor limpo(para lembra como funciona
+ //contrutor limpo(para lembra como funciona)
 public Usuario(){
     
 }

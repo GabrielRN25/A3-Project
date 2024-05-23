@@ -172,6 +172,7 @@
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="ancestorRemoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="ucBoxAncestorRemoved"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ucBoxActionPerformed"/>
       </Events>
       <AuxValues>
