@@ -26,3 +26,10 @@ na pagina de notas; implementação de um botão salvar;
 v0.07
 
 - correções em todas as telas.
+
+v0.08 
+- Criação da classe registro_array
+- Alteração grafica na pagina de registro
+-Adição do campo de confirmar senha
+-adição do get confirSenha na  Classe Usuario
+- moodificações menores em outras telas
