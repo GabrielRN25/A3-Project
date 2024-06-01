@@ -11,4 +11,8 @@ v0.03
 -Configurando e tonando funcional as checkBoxs
 
 v0.04
- - Correção tela de frequência e configurando jComboBox
+
+- Correção tela de frequência e configurando jComboBox
+
+v0.05
+-Correção e implementação da Hora e da Data na pagina "presença"
