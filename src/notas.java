@@ -16,7 +16,6 @@ public class notas extends javax.swing.JFrame {
         barraTop = new javax.swing.JPanel();
         title1 = new javax.swing.JLabel();
         image = new javax.swing.JLabel();
-        exitButton = new javax.swing.JButton();
         title2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaNotas = new javax.swing.JTable();
@@ -59,14 +58,6 @@ public class notas extends javax.swing.JFrame {
                         .addComponent(image, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
-
-        exitButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        exitButton.setText("Voltar");
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
-            }
-        });
 
         title2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         title2.setText("Componente Curricular:");
@@ -186,11 +177,9 @@ public class notas extends javax.swing.JFrame {
                                 .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(SalvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -206,7 +195,6 @@ public class notas extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(SalvarButton))
                 .addGap(0, 5, Short.MAX_VALUE))
@@ -246,11 +234,6 @@ public class notas extends javax.swing.JFrame {
             }
         });
                 }
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-    
-        System.exit(0);
-    }//GEN-LAST:event_exitButtonActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       tela t = new tela();
       this.dispose();
@@ -273,7 +256,6 @@ public class notas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton SalvarButton;
     private javax.swing.JPanel barraTop;
-    private javax.swing.JButton exitButton;
     public javax.swing.JLabel image;
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
