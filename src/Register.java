@@ -68,25 +68,24 @@ public class Register extends javax.swing.JFrame {
                 .addContainerGap(172, Short.MAX_VALUE))
         );
 
-        nameReg1.setBackground(new java.awt.Color(255, 255, 255));
         nameReg1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameReg1ActionPerformed(evt);
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Nome:");
 
-        senhaTitle.setForeground(new java.awt.Color(0, 0, 0));
+        senhaTitle.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         senhaTitle.setText("Senha:");
 
-        text1.setForeground(new java.awt.Color(255, 102, 102));
+        text1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        text1.setForeground(new java.awt.Color(255, 0, 0));
         text1.setText("Maximo 8 digitos");
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 153));
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +94,7 @@ public class Register extends javax.swing.JFrame {
         });
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
+        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox1.setText("Mostra Senha");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,6 +102,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox2.setText("Dicente ");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +110,7 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox3.setText("Docente");
         jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +150,7 @@ public class Register extends javax.swing.JFrame {
                                 .addComponent(jCheckBox2)
                                 .addGap(34, 34, 34)
                                 .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(87, Short.MAX_VALUE))))
+                        .addContainerGap(76, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

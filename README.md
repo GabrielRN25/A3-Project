@@ -22,3 +22,7 @@ v0.06
 
 -Pagina Notas: Correção de cores; implementação de um coluna "aprovado(a)"
 na pagina de notas; implementação de um botão salvar;
+
+v0.07
+
+- correções em todas as telas.
