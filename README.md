@@ -33,3 +33,7 @@ v0.08
 -Adição do campo de confirmar senha
 -adição do get confirSenha na  Classe Usuario
 - moodificações menores em outras telas
+
+v.0.09
+- Criação de nova classe de notas
+
