@@ -6,7 +6,8 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
      this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
-        
+        jTextField1.setDocument(new limitchar(60,limitchar.TipoEntrada.NOME));
+        jPasswordField1.setDocument(new limitchar(8,limitchar.TipoEntrada.SENHA));
     }
 
  

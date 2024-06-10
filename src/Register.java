@@ -10,8 +10,10 @@ public class Register extends javax.swing.JFrame {
     public Register() {
         initComponents();
          this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+         nameReg1.setDocument(new limitchar(60,limitchar.TipoEntrada.NOME));
+         jPasswordField2.setDocument(new limitchar(8,limitchar.TipoEntrada.SENHA));
+        jPConf.setDocument(new limitchar (8,limitchar.TipoEntrada.CFSENHA));
     }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
