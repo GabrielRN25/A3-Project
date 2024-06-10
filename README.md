@@ -37,3 +37,11 @@ v0.08
 v.0.09
 - Criação de nova classe de notas
 
+
+
+
+
+V.1.01
+
+-Criação das classe relacionadas relacinadas ou banco de dados
+-Implementação do banco de dados no login e senha 
