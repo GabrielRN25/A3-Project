@@ -241,8 +241,10 @@ public class Register extends javax.swing.JFrame {
        RegistroDb objRegistroDb =new RegistroDb();
        objRegistroDb.cadastrar(objUsuario);
        
-       
-       
+       nameReg1.setText("");
+       jPasswordField2.setText("");
+       jPConf.setText("");
+
       }else{
       //mensgem de erro 
      JOptionPane.showMessageDialog(null,"As senhas não batem");}

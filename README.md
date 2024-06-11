@@ -27,21 +27,25 @@ v0.07
 
 - correções em todas as telas.
 
-v0.08 
+v0.08
+
 - Criação da classe registro_array
 - Alteração grafica na pagina de registro
--Adição do campo de confirmar senha
--adição do get confirSenha na  Classe Usuario
+  -Adição do campo de confirmar senha
+  -adição do get confirSenha na Classe Usuario
 - moodificações menores em outras telas
 
 v.0.09
+
 - Criação de nova classe de notas
-
-
-
-
 
 V.1.01
 
 -Criação das classe relacionadas relacinadas ou banco de dados
--Implementação do banco de dados no login e senha 
+-Implementação do banco de dados no login e senha
+
+v.1.02
+
+-Criação da tela para editar o nome dos alunos e as notas na parte das notas;
+-Criação da tela de adicionar Aluno;
+-Correção na tela de registro ;
