@@ -25,9 +25,9 @@ public class notas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaNotas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        SalvarButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        editarjbutton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        adicionarjbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -130,7 +130,7 @@ public class notas extends javax.swing.JFrame {
                 java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, true, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -151,22 +151,28 @@ public class notas extends javax.swing.JFrame {
             }
         });
 
-        SalvarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        SalvarButton.setText("Salvar");
-        SalvarButton.addActionListener(new java.awt.event.ActionListener() {
+        editarjbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        editarjbutton.setText("EDITAR");
+        editarjbutton.setDefaultCapable(false);
+        editarjbutton.setPreferredSize(new java.awt.Dimension(72, 27));
+        editarjbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SalvarButtonActionPerformed(evt);
+                editarjbuttonActionPerformed(evt);
+                ActionListener(evt);
             }
         });
-
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("EDITAR");
-        jButton2.setDefaultCapable(false);
-        jButton2.setPreferredSize(new java.awt.Dimension(72, 27));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("Soluções Computacionais");
         jLabel1.setPreferredSize(new java.awt.Dimension(190, 26));
+
+        adicionarjbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        adicionarjbutton.setText("ADICIONAR");
+        adicionarjbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adicionarjbuttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,12 +190,12 @@ public class notas extends javax.swing.JFrame {
                                 .addComponent(title2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(SalvarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(adicionarjbutton)
+                                .addGap(18, 18, 18)
+                                .addComponent(editarjbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -203,13 +209,11 @@ public class notas extends javax.swing.JFrame {
                 .addGap(2, 2, 2)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(0, 5, Short.MAX_VALUE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(SalvarButton))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(editarjbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(adicionarjbutton))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,9 +256,23 @@ public class notas extends javax.swing.JFrame {
       t.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void SalvarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarButtonActionPerformed
+    private void editarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarjbuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SalvarButtonActionPerformed
+      editar e = new editar();
+      this.dispose();
+      e.setVisible(true);
+    }//GEN-LAST:event_editarjbuttonActionPerformed
+
+    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ActionListener
+
+    private void adicionarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarjbuttonActionPerformed
+        // TODO add your handling code here:
+      addNotas d = new addNotas();
+      this.dispose();
+      d.setVisible(true);
+    }//GEN-LAST:event_adicionarjbuttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,11 +280,11 @@ public class notas extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton SalvarButton;
+    private javax.swing.JButton adicionarjbutton;
     private javax.swing.JPanel barraTop;
+    private javax.swing.JButton editarjbutton;
     public javax.swing.JLabel image;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaNotas;

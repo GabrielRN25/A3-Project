@@ -36,12 +36,12 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel1" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton2" min="-2" pref="92" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                              <Component id="SalvarButton" min="-2" pref="111" max="-2" attributes="0"/>
+                              <Component id="adicionarjbutton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="editarjbutton" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -62,16 +62,12 @@
               <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="330" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton2" alignment="3" max="32767" attributes="0"/>
-                      <Component id="SalvarButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="editarjbutton" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="adicionarjbutton" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="0" pref="5" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -168,10 +164,10 @@
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="50">
                 <Column editable="false" title="Alunos" type="java.lang.Object"/>
-                <Column editable="true" title="A1" type="java.lang.Double"/>
-                <Column editable="true" title="A2" type="java.lang.Double"/>
-                <Column editable="true" title="A3" type="java.lang.Double"/>
-                <Column editable="true" title="Total" type="java.lang.Double"/>
+                <Column editable="false" title="A1" type="java.lang.Double"/>
+                <Column editable="false" title="A2" type="java.lang.Double"/>
+                <Column editable="false" title="A3" type="java.lang.Double"/>
+                <Column editable="false" title="Total" type="java.lang.Double"/>
                 <Column editable="false" title="Aprovado(a)" type="java.lang.Boolean"/>
               </Table>
             </Property>
@@ -227,18 +223,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="SalvarButton">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="14" style="1"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Salvar"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SalvarButtonActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="editarjbutton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -249,6 +234,9 @@
           <Dimension value="[72, 27]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="editarjbuttonActionPerformed,ActionListener"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -260,6 +248,17 @@
           <Dimension value="[190, 26]"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="adicionarjbutton">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="ADICIONAR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="adicionarjbuttonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
