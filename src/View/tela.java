@@ -19,6 +19,7 @@ public class tela extends javax.swing.JFrame {
     public tela() {
         initComponents();
          this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+         this.setResizable(false);
     }
 
     /**

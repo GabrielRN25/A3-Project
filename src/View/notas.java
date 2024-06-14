@@ -12,6 +12,7 @@ public class notas extends javax.swing.JFrame {
     public notas() {
         initComponents();
          this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+         this.setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -30,6 +31,8 @@ public class notas extends javax.swing.JFrame {
         adicionarjbutton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(null);
+        setMinimumSize(null);
 
         barraTop.setBackground(new java.awt.Color(255, 51, 51));
         barraTop.setForeground(new java.awt.Color(255, 51, 51));

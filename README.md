@@ -53,3 +53,7 @@ v.1.02
 v.1.03
 
 -implemantação de funções/metodos nos botões das telas de notas;
+
+v.1.04
+
+-implemtação do código "this.setResizable(false);" em todas as telas para que n possa maximizá-las;

@@ -16,6 +16,7 @@ public class addNotas extends javax.swing.JFrame {
     public addNotas() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+        this.setResizable(false);
     }
 
     /**

@@ -17,7 +17,7 @@ public class Register extends javax.swing.JFrame {
          nameReg1.setDocument(new limitchar(60,limitchar.TipoEntrada.NOME));
          jPasswordField2.setDocument(new limitchar(8,limitchar.TipoEntrada.SENHA));
          jPConf.setDocument(new limitchar (8,limitchar.TipoEntrada.CFSENHA));
-         
+         this.setResizable(false);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

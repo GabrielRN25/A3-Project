@@ -13,6 +13,7 @@ public class editar extends javax.swing.JFrame {
     public editar() {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+        this.setResizable(false);
     }
 
     /**
