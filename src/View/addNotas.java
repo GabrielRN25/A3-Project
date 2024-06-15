@@ -4,6 +4,12 @@
  */
 package View;
 
+import ClassCT.class_Notas;
+import ClassCT.limitchar;
+import DB.NotasDb;
+import javax.swing.JOptionPane;
+
+
 /**
  *
  * @author User
@@ -17,6 +23,10 @@ public class addNotas extends javax.swing.JFrame {
         initComponents();
         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
         this.setResizable(false);
+        nomeText.setDocument(new limitchar(60, limitchar.TipoEntrada.NOME));
+        a1Text.setDocument(new limitchar(5, limitchar.TipoEntrada.NUMERODECIMAL));
+        a2Text.setDocument(new limitchar(5, limitchar.TipoEntrada.NUMERODECIMAL));
+        a3Text.setDocument(new limitchar(5, limitchar.TipoEntrada.NUMERODECIMAL));
     }
 
     /**
@@ -30,13 +40,19 @@ public class addNotas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         voltarjbutton = new javax.swing.JButton();
-        adicionarjbutton = new javax.swing.JButton();
+        btmAdd = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        nomeText = new javax.swing.JTextField();
+        a1Text = new javax.swing.JTextField();
+        a2Text = new javax.swing.JTextField();
+        a3Text = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,16 +76,6 @@ public class addNotas extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null}
-            },
-            new String [] {
-                "Alunos", "A1", "A2", "A3"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("Componente Curricular :");
 
@@ -83,11 +89,11 @@ public class addNotas extends javax.swing.JFrame {
             }
         });
 
-        adicionarjbutton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        adicionarjbutton.setText("ADICIONAR");
-        adicionarjbutton.addActionListener(new java.awt.event.ActionListener() {
+        btmAdd.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btmAdd.setText("ADICIONAR");
+        btmAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adicionarjbuttonActionPerformed(evt);
+                btmAddActionPerformed(evt);
             }
         });
 
@@ -95,30 +101,84 @@ public class addNotas extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("ADICIONAR ALUNOS");
 
+        jLabel5.setText("Nome:");
+
+        jLabel6.setText("A1:");
+
+        jLabel7.setText("A2:");
+
+        jLabel8.setText("A3:");
+
+        nomeText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeTextActionPerformed(evt);
+            }
+        });
+
+        a1Text.setText("0");
+        a1Text.setToolTipText("");
+        a1Text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a1TextActionPerformed(evt);
+            }
+        });
+
+        a2Text.setText("0");
+        a2Text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a2TextActionPerformed(evt);
+            }
+        });
+
+        a3Text.setText("0");
+        a3Text.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                a3TextActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(voltarjbutton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)
-                                .addComponent(adicionarjbutton)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(114, 114, 114)
+                        .addComponent(jLabel4))
                     .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(voltarjbutton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btmAdd))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(a3Text))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(a2Text))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(a1Text))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(nomeText, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 171, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -126,32 +186,103 @@ public class addNotas extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(nomeText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(voltarjbutton)
-                    .addComponent(adicionarjbutton)))
+                    .addComponent(jLabel6)
+                    .addComponent(a1Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(a2Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(a3Text, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btmAdd)
+                            .addComponent(voltarjbutton))
+                        .addGap(15, 15, 15))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adicionarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarjbuttonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adicionarjbuttonActionPerformed
+    private void btmAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmAddActionPerformed
+        String nome;
+        double a1;
+        double a2;
+        double a3;
+       
+       class_Notas objNotas = new class_Notas();
+        if(nomeText.getText().isEmpty()){//verificação de preechimento
+            JOptionPane.showMessageDialog(null,"Preencha o campo de Nome");
+            
+        }else{
+            
+        objNotas.setNome (nomeText.getText());
+        
+        if(a1Text.getText().isEmpty()== false){//verificação de preechimento
+        objNotas.setA1 (Double.parseDouble(a1Text.getText()));
+   
+        }
+        if(a2Text.getText().isEmpty()== false){//verificação de preechimento
+        objNotas.setA2(Double.parseDouble(a2Text.getText()));
+        } 
+        if(a3Text.getText().isEmpty()== false){//verificação de preechimento
+        objNotas.setA3 (Double.parseDouble(a3Text.getText()));
+        }
+    
+        //Tentar salvar
+       
+        
+        NotasDb objNotasDb = new NotasDb();
+        objNotasDb.cadastrarNotas(objNotas);
+        
+        JOptionPane.showMessageDialog(null,"Notas salvas com êxito");
+        
+       nomeText.setText("");
+       a1Text.setText("");
+       a2Text.setText("");
+       a3Text.setText("");
+       
+        }
+    }//GEN-LAST:event_btmAddActionPerformed
 
     private void voltarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarjbuttonActionPerformed
         // TODO add your handling code here:
-      notas n = new notas();
-      this.dispose();
-      n.setVisible(true);
+        notas n = new notas();
+        this.dispose();
+        n.setVisible(true);
 
     }//GEN-LAST:event_voltarjbuttonActionPerformed
+
+    private void nomeTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeTextActionPerformed
+
+    private void a1TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a1TextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a1TextActionPerformed
+
+    private void a2TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a2TextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a2TextActionPerformed
+
+    private void a3TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a3TextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_a3TextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,14 +320,20 @@ public class addNotas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton adicionarjbutton;
+    private javax.swing.JTextField a1Text;
+    private javax.swing.JTextField a2Text;
+    private javax.swing.JTextField a3Text;
+    private javax.swing.JButton btmAdd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField nomeText;
     private javax.swing.JButton voltarjbutton;
     // End of variables declaration//GEN-END:variables
 }

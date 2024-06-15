@@ -3,7 +3,7 @@ package View;
 
 import ClassCT.limitchar;
 import ClassCT.Usuario;
-import DB.RegistroDb;
+import DB.Registro_UserDb;
 import javax.swing.JOptionPane;
 
 
@@ -238,7 +238,7 @@ public class Register extends javax.swing.JFrame {
        
        JOptionPane.showInternalMessageDialog(null, "Registro com êxito!");
        
-       RegistroDb objRegistroDb =new RegistroDb();
+       Registro_UserDb objRegistroDb =new Registro_UserDb();
        objRegistroDb.cadastrar(objUsuario);
        
        nameReg1.setText("");
