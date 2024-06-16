@@ -5,7 +5,9 @@ import DB.NotasDb;
 import javax.swing.JOptionPane;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 public class notas extends javax.swing.JFrame {
 
@@ -27,7 +29,6 @@ public class notas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaNotas = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        editarjbutton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         adicionarjbutton = new javax.swing.JButton();
 
@@ -96,6 +97,11 @@ public class notas extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tabelaNotas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaNotasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabelaNotas);
         if (tabelaNotas.getColumnModel().getColumnCount() > 0) {
             tabelaNotas.getColumnModel().getColumn(0).setResizable(false);
@@ -116,17 +122,6 @@ public class notas extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
-            }
-        });
-
-        editarjbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        editarjbutton.setText("EDITAR");
-        editarjbutton.setDefaultCapable(false);
-        editarjbutton.setPreferredSize(new java.awt.Dimension(72, 27));
-        editarjbutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarjbuttonActionPerformed(evt);
-                ActionListener(evt);
             }
         });
 
@@ -161,9 +156,7 @@ public class notas extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(adicionarjbutton)
-                                .addGap(18, 18, 18)
-                                .addComponent(editarjbutton, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(adicionarjbutton)))))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -176,12 +169,11 @@ public class notas extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
-                    .addComponent(editarjbutton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adicionarjbutton))
-                .addGap(0, 5, Short.MAX_VALUE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,23 +216,37 @@ public class notas extends javax.swing.JFrame {
         t.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void editarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarjbuttonActionPerformed
-        // TODO add your handling code here:
-        editar e = new editar();
-        this.dispose();
-        e.setVisible(true);
-    }//GEN-LAST:event_editarjbuttonActionPerformed
-
-    private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ActionListener
-
     private void adicionarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarjbuttonActionPerformed
         // TODO add your handling code here:
         addNotas d = new addNotas();
         this.dispose();
         d.setVisible(true);
     }//GEN-LAST:event_adicionarjbuttonActionPerformed
+
+    private void tabelaNotasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaNotasMouseClicked
+       int select = tabelaNotas.getSelectedRow();
+TableModel tableModel = tabelaNotas.getModel();
+
+String id = tableModel.getValueAt(select,0).toString();
+String nome = tableModel.getValueAt(select,1).toString();
+String a1 = tableModel.getValueAt(select,2).toString();
+String a2 = tableModel.getValueAt(select,3).toString();
+String a3 = tableModel.getValueAt(select,4).toString();
+
+ editar editar = new editar();
+editar.setVisible(true);
+this.dispose();
+editar.pack();
+editar.setLocationRelativeTo(null);
+editar.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+editar.editId.setText(id);
+editar.editNome.setText(nome);
+editar.editA1.setText(a1);
+editar.editA2.setText(a2);
+editar.editA3.setText(a3);
+
+    }//GEN-LAST:event_tabelaNotasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -249,7 +255,6 @@ public class notas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adicionarjbutton;
     private javax.swing.JPanel barraTop;
-    private javax.swing.JButton editarjbutton;
     public javax.swing.JLabel image;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

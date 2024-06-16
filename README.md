@@ -57,6 +57,3 @@ v.1.03
 v.1.04
 
 -implemtação do código "this.setResizable(false);" em todas as telas para que n possa maximizá-las;
-
-v.1.05
-- Criação do sistema de adicionar no banco de dados.;
