@@ -1,5 +1,6 @@
 package ClassCT;
 
+<<<<<<< HEAD
 import java.io.ObjectInputStream;
 
 public class class_Notas {
@@ -18,6 +19,10 @@ public class class_Notas {
         this.total = total;
     }
 
+=======
+public class class_Notas {
+
+>>>>>>> 2b57ced48bb83b5e7ba471bb989c605e01a708ec
     public int getId() {
         return id;
     }
@@ -74,5 +79,9 @@ public class class_Notas {
     
    
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2b57ced48bb83b5e7ba471bb989c605e01a708ec
 }
 

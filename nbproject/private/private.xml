@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/Faculdade/Trabalho%20A3%20git/A3-Project/src/DB/NotasDb.java</file>
             <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/Faculdade/Trabalho%20A3%20git/A3-Project/src/ClassCT/class_Notas.java</file>
             <file>file:/C:/Users/gabri/OneDrive/Área%20de%20Trabalho/Faculdade/Trabalho%20A3%20git/A3-Project/src/View/notas.java</file>
+=======
+            <file>file:/C:/Users/gabri/A3-Project/A3-Project/src/DB/Registro_UserDb.java</file>
+>>>>>>> 2b57ced48bb83b5e7ba471bb989c605e01a708ec
         </group>
     </open-files>
 </project-private>
