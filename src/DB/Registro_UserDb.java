@@ -4,7 +4,7 @@ import java.sql.Connection;
 import ClassCT.Usuario;
 import javax.swing.JOptionPane;
 
-public class RegistroDb {
+public class Registro_UserDb {
     
     Connection con;
     PreparedStatement pstm;

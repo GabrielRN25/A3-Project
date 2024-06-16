@@ -1,18 +1,19 @@
 package View;
 
-
-import View.tela;
-
-
-
+import ClassCT.class_Notas;
+import DB.NotasDb;
+import javax.swing.JOptionPane;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class notas extends javax.swing.JFrame {
 
-   
     public notas() {
         initComponents();
-         this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
-         this.setResizable(false);
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/image/logo.png")).getImage());
+        this.setResizable(false);
+        listarNotas();
     }
 
     @SuppressWarnings("unchecked")
@@ -74,63 +75,14 @@ public class notas extends javax.swing.JFrame {
         tabelaNotas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tabelaNotas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Alunos", "A1", "A2", "A3", "Total", "Aprovado(a)"
+                "ID", "Alunos", "A1", "A2", "A3", "Total"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Boolean.class
+                java.lang.Byte.class, java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false
@@ -145,6 +97,19 @@ public class notas extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tabelaNotas);
+        if (tabelaNotas.getColumnModel().getColumnCount() > 0) {
+            tabelaNotas.getColumnModel().getColumn(0).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(0).setPreferredWidth(30);
+            tabelaNotas.getColumnModel().getColumn(1).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(2).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(2).setPreferredWidth(50);
+            tabelaNotas.getColumnModel().getColumn(3).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(3).setPreferredWidth(50);
+            tabelaNotas.getColumnModel().getColumn(4).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(4).setPreferredWidth(50);
+            tabelaNotas.getColumnModel().getColumn(5).setResizable(false);
+            tabelaNotas.getColumnModel().getColumn(5).setPreferredWidth(70);
+        }
 
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setText("Página principal");
@@ -252,18 +217,18 @@ public class notas extends javax.swing.JFrame {
                 new notas().setVisible(true);
             }
         });
-                }
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      tela t = new tela();
-      this.dispose();
-      t.setVisible(true);
+        tela t = new tela();
+        this.dispose();
+        t.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void editarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarjbuttonActionPerformed
         // TODO add your handling code here:
-      editar e = new editar();
-      this.dispose();
-      e.setVisible(true);
+        editar e = new editar();
+        this.dispose();
+        e.setVisible(true);
     }//GEN-LAST:event_editarjbuttonActionPerformed
 
     private void ActionListener(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActionListener
@@ -272,16 +237,15 @@ public class notas extends javax.swing.JFrame {
 
     private void adicionarjbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarjbuttonActionPerformed
         // TODO add your handling code here:
-      addNotas d = new addNotas();
-      this.dispose();
-      d.setVisible(true);
+        addNotas d = new addNotas();
+        this.dispose();
+        d.setVisible(true);
     }//GEN-LAST:event_adicionarjbuttonActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton adicionarjbutton;
     private javax.swing.JPanel barraTop;
@@ -294,4 +258,33 @@ public class notas extends javax.swing.JFrame {
     private javax.swing.JLabel title1;
     private javax.swing.JLabel title2;
     // End of variables declaration//GEN-END:variables
+private void listarNotas() {
+        try {
+            NotasDb objNotasDb = new NotasDb();
+
+            DefaultTableModel model = (DefaultTableModel) tabelaNotas.getModel();
+            model.setNumRows(0);
+
+            ArrayList<class_Notas> lista = objNotasDb.pesquisar();
+
+            for (int num = 0; num < lista.size(); num++) {
+
+                model.addRow(new Object[]{
+                    lista.get(num).getId(),
+                    lista.get(num).getNome(),
+                    lista.get(num).getA1(),
+                    lista.get(num).getA2(),
+                    lista.get(num).getA3(),
+                    lista.get(num).getTotal()
+                });
+
+            }
+
+        } catch (Exception erro) {
+            JOptionPane.showInternalMessageDialog(null, "listarNotas" + erro);
+        }
+    }
+
+
+
 }
