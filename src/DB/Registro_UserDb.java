@@ -1,7 +1,7 @@
 package DB;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
-import ClassCT.Usuario;
+import ClassCT.login;
 import javax.swing.JOptionPane;
 
 public class Registro_UserDb {
@@ -9,7 +9,7 @@ public class Registro_UserDb {
     Connection con;
     PreparedStatement pstm;
     
-    public void cadastrar(Usuario objUsuario){
+    public void cadastrar(login objUsuario){
     String sql = "insert into usuario (nome, senha) values (?, ?)";
     
     con = new Dbc().mycConnectionon();  

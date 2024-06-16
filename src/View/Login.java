@@ -1,8 +1,8 @@
 package View;
 
 import ClassCT.limitchar;
-import ClassCT.Usuario;
-import DB.UsuarioDb;
+import ClassCT.login;
+import DB.LoginDb;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import java.sql.ResultSet;
@@ -245,12 +245,12 @@ public class Login extends javax.swing.JFrame {
         nome = txtNome.getText();
         senha = txtpassword.getText();
         
-        Usuario objetousUsuario = new Usuario();
+        login objetousUsuario = new login();
         objetousUsuario.setnome(nome);
         objetousUsuario.setsenha(senha);
         
         
-        UsuarioDb objUsuarioDb = new UsuarioDb();
+        LoginDb objUsuarioDb = new LoginDb();
         ResultSet rsUsuarioDb = objUsuarioDb.autenticacaoUser(objetousUsuario);
         
             if (rsUsuarioDb.next()) {

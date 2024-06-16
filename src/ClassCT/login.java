@@ -1,17 +1,17 @@
 package ClassCT;
 
-public class Usuario {
+public class login {
     
     private int id;
     private String nome;
     private String senha;
     private String cfsenha;
  //contrutor limpo(para lembra como funciona)
-public Usuario(){
+public login(){
     
 }
 //construtor com paramentros
-public Usuario(int id,String nome,String senha,String cfsenha){
+public login(int id,String nome,String senha,String cfsenha){
 
 this.id = id;
 this.nome = nome;

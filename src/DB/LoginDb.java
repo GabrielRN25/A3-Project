@@ -1,17 +1,17 @@
 package DB;
 
-import ClassCT.Usuario;
+import ClassCT.login;
 import java.sql.ResultSet;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class UsuarioDb {
+public class LoginDb {
 
     Connection con;
 
-    public ResultSet autenticacaoUser(Usuario objetoUsuario) {
+    public ResultSet autenticacaoUser(login objetoUsuario) {
 
         con = new Dbc().mycConnectionon();
 

@@ -2,7 +2,7 @@ package View;
 
 
 import ClassCT.limitchar;
-import ClassCT.Usuario;
+import ClassCT.login;
 import DB.Registro_UserDb;
 import javax.swing.JOptionPane;
 
@@ -133,7 +133,7 @@ public class Register extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton2.setText("LOGAR");
+        jButton2.setText("VOLTAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -172,10 +172,9 @@ public class Register extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(273, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jCheckBox1)
-                        .addGap(48, 48, 48)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(99, 99, 99)
                         .addComponent(jLabel1)
@@ -191,8 +190,10 @@ public class Register extends javax.swing.JFrame {
                         .addComponent(jPConf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(text1)
-                        .addGap(64, 64, 64)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(64, 64, 64)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
                 .addGap(55, 55, 55))
         );
 
@@ -224,7 +225,7 @@ public class Register extends javax.swing.JFrame {
       String nome, senha, cfsenha;
       
       //Bucar metodo em Usuario
-      Usuario usuario = new Usuario();
+      login usuario = new login();
       //Ler campos de texto
       nome = nameReg1.getText();
       senha = jPasswordField2.getText();
@@ -232,7 +233,7 @@ public class Register extends javax.swing.JFrame {
       //validar senha igual
       if (senha.equals(cfsenha)){
       //Tentar Salvar
-       Usuario objUsuario = new Usuario();
+       login objUsuario = new login();
        objUsuario.setnome(nome);
        objUsuario.setsenha(senha);
        
