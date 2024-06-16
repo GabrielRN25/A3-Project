@@ -1,6 +1,7 @@
 package DB;
 
 import ClassCT.class_Notas;
+import DB.Dbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
