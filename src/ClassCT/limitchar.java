@@ -29,7 +29,7 @@ public class limitchar extends PlainDocument {
         String regex ="";
         switch (tpEntrada) {
             case NUMEROINTEIRO: regex = "[^0-9]"; break;
-            case NUMERODECIMAL: regex = "[^0-9,.]"; break;
+            case NUMERODECIMAL: regex = "[^0-9.]"; break;
             case NOME:          regex ="[^\\p{IsLatin} ]"; break;
             case SENHA:         regex ="[^\\p{IsLatin}@.\\!#$%¨&*-+*//_-][^0-9]"; break;
             case CFSENHA:       regex ="[^\\p{IsLatin}@.\\!#$%¨&*-+*//_-][^0-9]"; break;   
